@@ -185,7 +185,7 @@ def inference(model, test_loader, device):
             preds += logit.argmax(1).detach().cpu().numpy().tolist()
     return preds
 
-info = ['weather', 'crash', 'ego-involve', 'timing']
+info = ['crash', 'ego-involve', 'timing']
 
 test_dataset = CustomDataset(test['video_path'].values, None)
 test_loader = DataLoader(test_dataset, batch_size = CFG['BATCH_SIZE'], shuffle=False, num_workers=0)
